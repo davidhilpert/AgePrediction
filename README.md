@@ -1,2 +1,8 @@
 # AgePrediction
-Uses BERT model to predict age based on first name 
+While companies generally seek to better understand their customers to improve marketing efforts, such knowledge is often limited. For example, in B2C settings, information like customer age can be informative for key performance indicators such as retention rate, yet it is often unavailable. One possible solution is to estimate customer age based on first names: when parents choose a name for their child, they are influenced by time-specific trends. However, authoritative datasets are costly, may not cover all first names in a customer base, and often provide average birth years that may not accurately reflect the underlying distribution. Moreover, such datasets can become outdated and typically lack uncertainty estimates.
+
+As an alternative, I present an approach that uses frequency data on 65,000 names from 1910 to 2023, provided by the Swiss Federal Statistical Office (https://www.bfs.admin.ch/asset/en/32208760). A model is trained to predict birth years based on names. The training process includes a pretraining and a finetuning stage. During pretraining, a bidirectional encoder with multiple attention layers learns patterns in names (feature extraction). During finetuning, these features are used to predict the most likely birth year associated with a given name.
+
+The trained model estimates birth years with an accuracy of up to 17 years, with a theoretical upper bound of 11 years. It can be readily adapted by businesses to estimate the age distribution of their customer base and validated using customer subsets for which age data is available.
+
+Further performance improvements are likely achievable by incorporating additional data, such as customer behavior derived from engagement with online services.
