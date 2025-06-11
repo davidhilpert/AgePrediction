@@ -2,6 +2,8 @@
 ## Summary
 While companies generally seek to better understand their customers to improve marketing efforts, such knowledge is often limited. For example, in B2C settings, information like customer age can be informative for key performance indicators such as retention rate, yet it is often unavailable. One possible solution is to estimate customer age based on first names: when parents choose a name for their child, they are influenced by time-specific trends. However, authoritative datasets are costly, may not cover all first names in a customer base, and often provide average birth years that may not accurately reflect the underlying distribution. Moreover, such datasets can become outdated and typically lack uncertainty estimates.
 
+<img src="figures/fig_distri.png" alt="Age Distribution" width="80%" height="80%" />
+
 As an alternative, I present an approach that uses frequency data on 65,373 names from 1909 to 2023, provided by the Swiss Federal Statistical Office (https://www.bfs.admin.ch/asset/en/32208760). A model is trained to predict birth years based on names. The training process includes a pretraining and a finetuning stage. During pretraining, a bidirectional transformer with multiple attention layers learns patterns in names (feature extraction). During finetuning, these features are used to predict the most likely birth year associated with a given name.
 
 <img src="figures/project_sketch.svg" alt="Project outline" width="80%" height="80%" />
