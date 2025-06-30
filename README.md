@@ -8,7 +8,7 @@ As an alternative, I present an approach that uses frequency data on 65,373 name
 
 <img src="figures/project_sketch.svg" alt="Project outline" width="80%" height="80%" />
 
-The trained model estimates birth years with a Smoothed Mean Absolute Error (SMAE) of 15.8 years. This error cannot be brought lower than 11.8 years on average, due to names typically recurring across multiple decades, which introduces irreducible estimation uncertainty. In comparison to a benchmark SMAE of 19.0 years (equivalent to predicting the population mean birth year for all names), this model achieves a 44.1% reduction in prediction error. The model demonstrates particular strength in handling frequency-weighted predictions, focusing learning on representative naming patterns rather than outliers, which is crucial for practical business applications.
+The trained model estimates birth years with a Smoothed Mean Absolute Error (SMAE) of 15.8 years. As the data represents the distribution of names across years, as opposed to a single average year per name, names can be only predicted up to a range. For the model, this means that model error cannot be brought lower than 11.8 years on average, indicating that even the best possible guess makes estimation errors of +/- 11.8 years on average. In comparison to a benchmark SMAE of 19.0 years (equivalent to predicting the population mean birth year for all names), the trained model achieves a 44.1% reduction in prediction error. The model demonstrates particular strength in handling frequency-weighted predictions, focusing learning on representative naming patterns rather than outliers, which is crucial for practical business applications.
 
 <img src="figures/smae_plot.png" alt="Model performance" width="80%" height="80%" />
 
